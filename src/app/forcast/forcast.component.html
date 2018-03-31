@@ -1,6 +1,11 @@
 
+<form (ngSubmit)="onSubmit(zipCode.value)">
+<label>Enter zip code: </label>
+<input type="text" #zipCode />
+<button type="submit">submit</button>
+</form>
 <div *ngIf="forcast">
-  <p>{{forcast.name}}</p>
-  <p>{{forcast.main.temp}}</p>
-  <p>{{forcast.weather[0].description}}</p>
+  <p>Location: {{forcast.name}}</p>
+  <p>Temp: {{forcast.main.temp}} F</p>
+  <p>Description: {{forcast.weather[0].description}}</p>
 </div>

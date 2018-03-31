@@ -14,8 +14,7 @@ export class ForcastService {
 
   constructor(private http: HttpClient) { }
 
-  getForcast(): Observable<Forecast> {
-    return this.http.get<Forecast>(this.endpoint);
+  getForcast(zipCode: string): Observable<Forecast> {
+    return this.http.get<Forecast>(this.endpoint.replace("#####", zipCode));
   }
-
 }

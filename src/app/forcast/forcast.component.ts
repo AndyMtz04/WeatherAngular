@@ -12,15 +12,13 @@ import { ForcastService} from '../forcast.service';
 export class ForcastComponent implements OnInit {
 
   forcast: Forecast;
+  submited: boolean;
 
   constructor(private forcastService: ForcastService) { }
   
-  ngOnInit() {
-    this.getTest();
-  }
+  ngOnInit() {}
 
-  getTest(): void {
-    this.forcastService.getForcast().subscribe(data => this.forcast = data);
+  onSubmit(zipCode: string): void {
+    this.forcastService.getForcast(zipCode).subscribe(data => this.forcast = data);
   }
-
 }
