@@ -1,12 +1,19 @@
 
-<form (ngSubmit)="onSubmit(zipCode.value)">
-<label>Enter zip code: </label>
-<input type="text" #zipCode />
-<button type="submit">submit</button>
-</form>
-<div *ngIf="forcast">
-  <p>Location: {{forcast.name}}</p>
-  <p>Temp: {{forcast.main.temp}} F</p>
-  <p>Description: {{forcast.weather[0].description}}</p>
-  <img src={{icon}}/>
+
+<div class="">
+  <form (ngSubmit)="onSubmit(zipCode.value)">
+    <label>Enter zip code </label>
+    <div class="form-group">
+      <input type="text" #zipCode  class="form-control"/>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary ">submit</button>
+    </div>
+  </form>
+  <div *ngIf="forcast">
+    <p>Location: {{forcast.name}}</p>
+    <p>Temp: {{forcast.main.temp}} F</p>
+    <p>Description: {{forcast.weather[0].description}}</p>
+    <img width="200" src={{icon}}/>
+  </div>
 </div>
