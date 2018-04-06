@@ -11,9 +11,9 @@
     </div>
   </form>
   <div *ngIf="forcast">
+    <img width="200" src={{icon}}/>
     <p>Location: {{forcast.name}}</p>
     <p>Temp: {{forcast.main.temp}} F</p>
     <p>Description: {{forcast.weather[0].description}}</p>
-    <img width="200" src={{icon}}/>
   </div>
 </div>
